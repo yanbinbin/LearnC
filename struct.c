@@ -9,11 +9,25 @@ struct Books
 	int book_id;
 };
 
+// 位域的使用
+struct bs
+{
+	unsigned a:1;
+	int :2; /* 该 2 位不能使用 */
+	unsigned c:3;
+	unsigned d:4;
+}bits, *pbs;
+
 // 函数申明
 void printStructContent(struct Books *);
 
 int main()
 {
+	bits.a = 1;
+	bits.c = 0;
+	bits.d = 15;
+	printf("struct bs's size: %lu,%d,%d,%d\n",sizeof(bits), bits.a,bits.c, bits.d);	/* 以整型量格式输出三个域的内容 */
+
 	struct Books book1; /* 声明book1，类型为Books*/
 	struct Books book2; /* 声明book2，类型为Books*/
 
