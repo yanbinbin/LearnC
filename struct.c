@@ -10,7 +10,7 @@ struct Books
 };
 
 // 函数申明
-void printStructContent(struct Books);
+void printStructContent(struct Books *);
 
 int main()
 {
@@ -38,16 +38,16 @@ int main()
    printf("----------------------------------\n");
 
    /* 输出 book2 信息 */
-   printStructContent(book2);
+   printStructContent(&book2);
 
    return 0;
 
 }
 
-void printStructContent(struct Books book)
+void printStructContent(struct Books *book)
 {
-   printf("book title : %s\n", book.title);
-   printf("book author : %s\n", book.author);
-   printf("book subject : %s\n", book.subject);
-   printf("book book_id : %d\n", book.book_id);
+   printf("book title : %s\n", book->title);
+   printf("book author : %s\n", book->author);
+   printf("book subject : %s\n", book->subject);
+   printf("book book_id : %d\n", book->book_id);
 }
