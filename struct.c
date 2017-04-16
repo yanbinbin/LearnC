@@ -9,6 +9,9 @@ struct Books
 	int book_id;
 };
 
+// 函数申明
+void printStructContent(struct Books);
+
 int main()
 {
 	struct Books book1; /* 声明book1，类型为Books*/
@@ -35,11 +38,16 @@ int main()
    printf("----------------------------------\n");
 
    /* 输出 book2 信息 */
-   printf( "book2 title : %s\n", book2.title);
-   printf( "book2 author : %s\n", book2.author);
-   printf( "book2 subject : %s\n", book2.subject);
-   printf( "book2 book_id : %d\n", book2.book_id);
+   printStructContent(book2);
 
    return 0;
 
+}
+
+void printStructContent(struct Books book)
+{
+   printf("book title : %s\n", book.title);
+   printf("book author : %s\n", book.author);
+   printf("book subject : %s\n", book.subject);
+   printf("book book_id : %d\n", book.book_id);
 }
